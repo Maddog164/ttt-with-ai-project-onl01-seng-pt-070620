@@ -24,4 +24,10 @@ class Game
     board.turn_count.odd? ? (player_2):(player_1)
   end
 
+  def won?
+    WIN_COMBINATIONS.detect do |winning_combo|
+      @board.cells[winning_combo[0]] != " " && @board.cells[winning_combo[0]] == @board.cells[winning_combo[1]] && @board.cells[winning_combo[1]] == @board.cells[winning_combo[2]]
+    end
+  end
+
 end
