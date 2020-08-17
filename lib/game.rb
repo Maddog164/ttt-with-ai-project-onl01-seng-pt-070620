@@ -38,4 +38,12 @@ class Game
     (won? || draw?) ? true:false
   end
 
+  def winner
+    if won?
+      combination = won?
+      @board.cells[combination[0]]
+    end
+  end
+
+
 end
