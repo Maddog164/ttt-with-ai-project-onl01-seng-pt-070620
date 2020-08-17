@@ -30,4 +30,8 @@ class Game
     end
   end
 
+  def draw?
+    @board.full? && !won? ? true:false
+  end
+
 end
